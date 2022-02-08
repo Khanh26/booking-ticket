@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+ 
+/* header */
+.header-info {
+    width: 100%;
+    padding: 0 86px;
+}
+
+.block-header {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.blockInput {
+    border: 1px solid #cccccc;
+    margin: auto;
+    border-radius: 9px;
+}
+
+.inputSearch, .btnSearch {
+    border: none;
+    height: 29px;   
+}
+
+.inputSearch {
+    border-radius: 9px 0 0 9px;
+}
+
+.btnSearch {
+    background-color: transparent;
+    border-radius: 0 9px 9px 0;
+    border-left: 1px solid #cccccc;
+    color: #cccccc;
+    -webkit-transition: all 0.8s;
+}
+
+.btnSearch:hover {
+    background-color: #8b8989;
+}
+
+.login {
+    color: rgb(145, 145, 145);
+}
+
+.btnLogin {
+    border: none;
+    background-color: transparent;
+    color: rgb(145, 145, 145);
+}
+
+.btnLogin:hover {
+    color: black;
+}
+
+.header-main {
+    background-color: black;
+    padding: 0 86px;    
+}
+
+.nav-item  {
+    text-align: center;
+    padding: 4px;
+    position:relative;
+}
+
+.nav-item:hover a {
+    color: #E14B26;
+}
+
+.nav-item > a {
+    color: white;
+    /* font-family: 'Noto Serif', serif; */
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-transition: all 0.5s;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    height: 30%;
+    width: 1px;
+    right: 0;
+    top: 50%;
+    background-color: white;
+    transform: translateY(-50%);
+}
+
+.nav-item-start::before {
+    content: '';
+    position: absolute;
+    height: 30%;
+    width: 1px;
+    left: 0;
+    top: 50%;
+    background-color: white;
+    transform: translateY(-50%);
+}
+/* footer */
+
+#footer {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#footer .block-footer {
+    padding: 30px 0 30px 0;
+}
+
+#footer .header-footer{
+    position: relative;
+}
+
+#footer .heading-footer::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: #E14B26;
+    left: 0;
+
+}
+
+#footer .heading-footer {
+    color: #cccccc;
+    margin-bottom: 36px;
+    padding: 0 0 0 20px;
+}
+
+#footer .link-footer {
+    display: block;
+    margin-bottom: 12px;
+    color: #cccccc;
+    transition: all 0.2s;
+}
+
+#footer .link-footer:hover {
+    color: #E14B26;
+}
+
+#footer .icon-social {
+    font-size: 25px;
+}
+
+
