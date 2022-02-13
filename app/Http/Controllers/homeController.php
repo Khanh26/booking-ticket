@@ -6,8 +6,17 @@ use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
-    public function show()
+    public function home()
     {
         return view('client.home');
+    }
+    
+    public function about() {
+        return view('client.about');
+    }
+
+    public function search(Request $request) {
+        return view('client.search')->with('resultSearch',$request->input('Search'));
+        // return view('client.search');
     }
 }

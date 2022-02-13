@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\movieController;
+use App\Http\Controllers\newsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,18 @@ use App\Http\Controllers\homeController;
 |
 */
 
-Route::get('/', [homeController::class,'show'])->name('home');
+Route::get('/', [homeController::class,'home'])->name('home');
+
+Route::get('/tim-kiem', [homeController::class,'search'])->name('search');
+Route::prefix('phim')->group( function() {
+    Route::get('/', [movieController::class,'show'])->name('movie');
+});
+
+Route::prefix('tin-tuc')->group(function() {
+    Route::get('/', [newsController::class, 'showNews'])->name('news');
+    Route::get('/review-phim', [newsController::class, 'showReviewMovie'])->name('reviewMovie');
+    Route::get('/goc-dien-anh', [newsController::class, 'showCinemaCorner'])->name('cinemaCorner');
+    Route::get('khuyen-mai',[newsController::class, 'showPromotion'])->name('promotion');
+});
+Route::get('/gioi-thieu', [homeController::class,'about'])->name('about');
+

@@ -5,7 +5,7 @@
                 <h4 class="heading-footer">GIỚI THIỆU</h4>
             </div>
             <div class="list-footer">
-                <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> VỀ CHÚNG TÔI</a>
+                <a href="{{ route('about') }}" class="link-footer"><i class="fas fa-angle-double-right"></i> VỀ CHÚNG TÔI</a>
                 <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> CHÍNH SÁCH BẢO MẬT</a>
                 <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> THỎA THUẬN SỬ DỤNG</a>
             </div>
@@ -15,9 +15,9 @@
                 <h4 class="heading-footer">TIN TỨC</h4>
             </div>
             <div class="list-footer">
-                <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> REVIEW PHIM</a>
-                <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> KÝ SỰ ĐIỆN ẢNH</a>
-                <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> TIN TỨC PHIM</a>
+                <a href="{{ route('reviewMovie')}}" class="link-footer"><i class="fas fa-angle-double-right"></i> REVIEW PHIM</a>
+                <a href="{{ route('cinemaCorner')}}" class="link-footer"><i class="fas fa-angle-double-right"></i> GÓC ĐIỆN ĐIỆN ẢNH</a>
+                <a href="{{ route('promotion')}}" class="link-footer"><i class="fas fa-angle-double-right"></i> TIN TỨC PHIM</a>
             </div>
         </div>
         <div class="col-3">

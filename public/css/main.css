@@ -33,10 +33,15 @@ ul {
 .inputSearch, .btnSearch {
     border: none;
     height: 29px;   
+    outline: none;
 }
 
 .inputSearch {
     border-radius: 9px 0 0 9px;
+}
+
+.inputSearch:focus {
+    border: 1px solid #E14B26;
 }
 
 .btnSearch {
@@ -44,11 +49,12 @@ ul {
     border-radius: 0 9px 9px 0;
     border-left: 1px solid #cccccc;
     color: #cccccc;
-    -webkit-transition: all 0.8s;
+    -webkit-transition: all 0.3s;
 }
 
 .btnSearch:hover {
-    background-color: #8b8989;
+    background-color: #E14B26;
+    color: white;
 }
 
 .login {
@@ -76,7 +82,7 @@ ul {
     position:relative;
 }
 
-.nav-item:hover a {
+.nav-item:hover > a {
     color: #E14B26;
 }
 
@@ -109,6 +115,35 @@ ul {
     background-color: white;
     transform: translateY(-50%);
 }
+
+.nav-item:hover .subMenu {
+    display: block;
+}
+
+.subMenu {
+    position: absolute;
+    z-index: 9999999;
+    text-align: center;
+    background-color: black;
+    min-width: 100%;
+    padding: 0;
+    display: none;
+}
+
+.item-subMenu > a {
+    display: block;
+    padding: 12px 4px 12px 0px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-transition: all 0.5s;
+}
+
+.item-subMenu:hover > a {
+    color: #E14B26;
+}
+
+
 /* footer */
 
 #footer {

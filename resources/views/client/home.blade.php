@@ -162,13 +162,16 @@
                 </div>
             </div>
         </div>
+        <div class="footer-news text-end">
+            <a href="{{ route('news') }}" class="link-more-news">XEM THÊM <i class="fas fa-angle-right ml-2"></i></a>
+        </div>
     </div>
 
     <div class="container event">
         <div class="header-event">
             <h3 class="heading-content active heading-event">KHUYẾN MÃI - SỰ KIỆN</h3>
         </div>
-
+        
         <div class="list-event row">
             <div class="col-3 item-event position-relative">
                 <img src="img/event/1.jpg" class="img-banner-event" alt="">
