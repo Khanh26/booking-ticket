@@ -19,4 +19,12 @@ class homeController extends Controller
         return view('client.search')->with('resultSearch',$request->input('Search'));
         // return view('client.search');
     }
+
+    public function login() {
+        return view('client.login');
+    }
+
+    public function register() {
+        return view('client.register');
+    }
 }

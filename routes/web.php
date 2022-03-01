@@ -17,6 +17,9 @@ use App\Http\Controllers\newsController;
 
 Route::get('/', [homeController::class,'home'])->name('home');
 
+Route::get('/dang-nhap', [homeController::class,'login'])->name('login');
+Route::get('/dang-ky', [homeController::class,'register'])->name('register');
+
 Route::get('/tim-kiem', [homeController::class,'search'])->name('search');
 Route::prefix('phim')->group( function() {
     Route::get('/', [movieController::class,'show'])->name('movie');

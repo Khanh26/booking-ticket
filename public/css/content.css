@@ -306,7 +306,7 @@
     transition: all 0.2s;
 }
 .sidebar .item-movieShowing:hover {
-    background-color: #dddada;;
+    background-color: #dddada;
 }
 
 .sidebar .more-sidebar {
@@ -316,13 +316,17 @@
     color: #E14B26;
     font-size: 18px;
     transition: all 0.4s;
+    display: block;
 }
 
 .sidebar .more-link:hover {
-    font-weight: 600;
+    /* font-weight: 600; */
+    background-color: #dddada;
 }
 /* End sidebar - news */
 /* search */
+
+/* End search */
 
 
 

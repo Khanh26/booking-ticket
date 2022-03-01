@@ -21,9 +21,9 @@
         </div>
         <div class="col-4 login p-0 text-end">
             <i class="fas fa-user"></i>
-            <button class="btnLogin ml-3">Đăng nhập</button>
+            <a href="{{ route('login') }}" class="btnLogin ml-3">Đăng nhập</a>
             <span>/</span>
-            <button class="btnLogin">Đăng ký</button>
+            <a href="{{ route('register') }}" class="btnLogin">Đăng ký</a>
         </div>
     </div>
 </nav>

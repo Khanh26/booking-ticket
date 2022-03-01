@@ -22,7 +22,7 @@
         </div>
         <div class="col-3">
             <div class="header-footer">
-                <h4 class="heading-footer">HỔ TRỢ</h4>
+                <h4 class="heading-footer">HỖ TRỢ</h4>
             </div>
             <div class="list-footer">
                 <a href="" class="link-footer"><i class="fas fa-angle-double-right"></i> GÓP Ý</a>
