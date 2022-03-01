@@ -13,7 +13,12 @@
     color: white;
     border: none;
 }
-
+/* fix focus btn */
+.pageLogin .btnSubmitLogin:focus {
+    outline: none;
+    box-shadow: none;    
+}
+/* end fix focus btn */
 .pageLogin .block-remember {
     text-align: center; 
 }
