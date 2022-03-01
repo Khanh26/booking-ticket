@@ -1,0 +1,23 @@
+.pageLogin .header-join {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pageLogin .body-join {
+    padding: 10px 247px;
+}
+
+.pageLogin .btnSubmitLogin {
+    width: 100%;
+    background-color: #E14B26;
+    color: white;
+    border: none;
+}
+
+.pageLogin .block-remember {
+    text-align: center; 
+}
+
+.pageLogin .btnSubmitLogin:hover {
+    background-color: #e46748;
+}

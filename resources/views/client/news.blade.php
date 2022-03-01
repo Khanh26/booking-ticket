@@ -79,7 +79,7 @@
             </div>
         </div>
         {{-- sidebar --}}
-        @include('client.block.sidebar')
+        @include('client.block.sidebarNews')
     </div>
     {{-- <div class="footer-news text-end">
         <a href="" class="link-more-news">XEM THÊM <i class="fas fa-angle-right ml-2"></i></a>
