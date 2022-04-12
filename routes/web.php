@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\movieController;
 use App\Http\Controllers\newsController;
+use App\Http\Controllers\adminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,12 @@ Route::get('/', [homeController::class,'home'])->name('home');
 Route::get('/dang-nhap', [homeController::class,'login'])->name('login');
 Route::get('/dang-ky', [homeController::class,'register'])->name('register');
 
+Route::post('dang-ky', []);
+
 Route::get('/tim-kiem', [homeController::class,'search'])->name('search');
 Route::prefix('phim')->group( function() {
     Route::get('/', [movieController::class,'show'])->name('movie');
+    Route::get('/chitiet', [movieController::class,'showDetails'])->name('detailsMovie');
 });
 
 Route::prefix('tin-tuc')->group(function() {
@@ -33,3 +37,9 @@ Route::prefix('tin-tuc')->group(function() {
 });
 Route::get('/gioi-thieu', [homeController::class,'about'])->name('about');
 
+// admin
+Route::prefix('/admin')->group(function() {
+    Route::get('/', [adminController::class,'admin'])->name('admin');
+    Route::get('/sap-lich-chieu-phim', [adminController::class,'pageShowMovie'])->name('pageShowMovie');
+    Route::get('/cap-nhap-phim', [adminController::class,'pageUpdateMovie'])->name('pageUpdateMovie');
+});

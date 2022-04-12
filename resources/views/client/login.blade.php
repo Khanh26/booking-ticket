@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="mb-4 block-remember">
-                        <p class="block-join">Bạn chưa có tài khoản? <a href=""">Đăng ký ngay</a></p>
+                        <p class="block-join">Bạn chưa có tài khoản? <a href="{{ route('register') }}">Đăng ký ngay</a></p>
                     </div>
                     <button type="submit" class="btn btn-primary btnSubmitLogin">Đăng nhập</button>
                 </form>

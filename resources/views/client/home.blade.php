@@ -117,7 +117,8 @@
                     </div>
                     <div class="title-news col-7">
                         <a href=""><h5 class="title-new">[Review] Encanto: Tình Cảm Gia Đình Chẳng Cần Đao To Búa Lớn!</h5></a>
-                        <div class="rate mb-3"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 12/03/2020</i></div>
                         <p class="content-new">Chẳng đao to búa lớn, chẳng dời non lấp bể, cách bạn trở thành người hùng để cứu lấy thứ gì đó</p>
                     </div>
                 </div>
@@ -130,7 +131,8 @@
                     </div>
                     <div class="title-news col-7">
                         <a href=""><h5 class="title-new">[Review] Encanto: Tình Cảm Gia Đình Chẳng Cần Đao To Búa Lớn!</h5></a>
-                        <div class="rate mb-3"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 12/03/2020</i></div>
                         <p class="content-new">Chẳng đao to búa lớn, chẳng dời non lấp bể, cách bạn trở thành người hùng để cứu lấy thứ gì đó</p>
                     </div>
                 </div>
@@ -143,7 +145,8 @@
                     </div>
                     <div class="title-news col-7">
                         <a href=""><h5 class="title-new">[Review] Encanto: Tình Cảm Gia Đình Chẳng Cần Đao To Búa Lớn!</h5></a>
-                        <div class="rate mb-3"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 12/03/2020</i></div>
                         <p class="content-new">Chẳng đao to búa lớn, chẳng dời non lấp bể, cách bạn trở thành người hùng để cứu lấy thứ gì đó</p>
                     </div>
                 </div>
@@ -156,7 +159,8 @@
                     </div>
                     <div class="title-news col-7">
                         <a href=""><h5 class="title-new">[Review] Encanto: Tình Cảm Gia Đình Chẳng Cần Đao To Búa Lớn!</h5></a>
-                        <div class="rate mb-3"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)</div>
+                        <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 12/03/2020</i></div>
                         <p class="content-new">Chẳng đao to búa lớn, chẳng dời non lấp bể, cách bạn trở thành người hùng để cứu lấy thứ gì đó</p>
                     </div>
                 </div>
