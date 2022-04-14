@@ -9,8 +9,10 @@ class Admin extends Model
 {
     use HasFactory;
     protected $table = 'admin';
+    public $timestamps = false;
     protected $fillable = ['ID_ADMIN', 'USERNAME', 'NAME_ADMIN', 'BIRTHDAY_ADMIN', 'GENDER_ADMIN', 'EMAIL_ADMIN', 'PHONE_ADMIN', 'ADDRESS_ADMIN'];
-
+    protected $primaryKey = 'ID_ADMIN';
+    
     public function account() {
         return $this->belongsTo(Account::class, 'USERNAME', 'USERNAME');
     }

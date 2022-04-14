@@ -9,8 +9,10 @@ class Comment extends Model
 {
     use HasFactory;
     protected $table = 'comment';
+    public $timestamps = false;
     protected $fillable = ['ID_COMMENT', 'ID_POST', 'ID_MEMBER', 'DAY_COMMENT', 'CONTENT_COMMENT'];
-
+    protected $primaryKey = 'ID_COMMENT';
+    
     public function post() {
         return $this->belongsTo(Post::class, 'ID_POST', 'ID_POST');
     }

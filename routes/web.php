@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\homeController;
-use App\Http\Controllers\movieController;
-use App\Http\Controllers\newsController;
-use App\Http\Controllers\adminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use Illuminate\Auth\Events\Logout;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,31 +19,33 @@ use App\Http\Controllers\adminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('/')->group(function() {
+    Route::get('/', [HomeController::class,'home'])->name('home');
+    Route::get('/dang-nhap', [AuthController::class,'login'])->name('login');
+    Route::get('/dang-ky', [AuthController::class,'register'])->name('register');
+    Route::get('/dang-xuat', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/dang-nhap',[AuthController::class, 'postLogin'])->name('postLogin');
+    Route::post('/dang-ky',[AuthController::class, 'postRegister'])->name('postRegister');
 
-Route::get('/', [homeController::class,'home'])->name('home');
 
-Route::get('/dang-nhap', [homeController::class,'login'])->name('login');
-Route::get('/dang-ky', [homeController::class,'register'])->name('register');
+    Route::get('/tim-kiem', [HomeController::class,'search'])->name('search');
+    Route::prefix('phim')->group( function() {
+        Route::get('/', [MovieController::class,'show'])->name('movie');
+        Route::get('/chitiet', [MovieController::class,'showDetails'])->name('detailsMovie');
+    });
 
-Route::post('dang-ky', []);
-
-Route::get('/tim-kiem', [homeController::class,'search'])->name('search');
-Route::prefix('phim')->group( function() {
-    Route::get('/', [movieController::class,'show'])->name('movie');
-    Route::get('/chitiet', [movieController::class,'showDetails'])->name('detailsMovie');
+    Route::prefix('tin-tuc')->group(function() {
+        Route::get('/', [NewsController::class, 'showNews'])->name('news');
+        Route::get('/review-phim', [NewsController::class, 'showReviewMovie'])->name('reviewMovie');
+        Route::get('/goc-dien-anh', [NewsController::class, 'showCinemaCorner'])->name('cinemaCorner');
+        Route::get('khuyen-mai',[NewsController::class, 'showPromotion'])->name('promotion');
+    });
+    Route::get('/gioi-thieu', [HomeController::class,'about'])->name('about');
 });
-
-Route::prefix('tin-tuc')->group(function() {
-    Route::get('/', [newsController::class, 'showNews'])->name('news');
-    Route::get('/review-phim', [newsController::class, 'showReviewMovie'])->name('reviewMovie');
-    Route::get('/goc-dien-anh', [newsController::class, 'showCinemaCorner'])->name('cinemaCorner');
-    Route::get('khuyen-mai',[newsController::class, 'showPromotion'])->name('promotion');
-});
-Route::get('/gioi-thieu', [homeController::class,'about'])->name('about');
 
 // admin
 Route::prefix('/admin')->group(function() {
-    Route::get('/', [adminController::class,'admin'])->name('admin');
-    Route::get('/sap-lich-chieu-phim', [adminController::class,'pageShowMovie'])->name('pageShowMovie');
-    Route::get('/cap-nhap-phim', [adminController::class,'pageUpdateMovie'])->name('pageUpdateMovie');
+    Route::get('/', [AdminController::class,'admin'])->name('admin');
+    Route::get('/sap-lich-chieu-phim', [AdminController::class,'pageShowMovie'])->name('pageShowMovie');
+    Route::get('/cap-nhap-phim', [AdminController::class,'pageUpdateMovie'])->name('pageUpdateMovie');
 });

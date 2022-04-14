@@ -9,8 +9,9 @@ class Movie extends Model
 {
     use HasFactory;
     protected $table = 'movie';
+    public $timestamps = false;
     protected $fillable = ['ID_MOVIE', 'ID_RATED', 'ID_GENRE', 'NAME_MOVIE', 'POSTER_MOVIE', 'TRAILER_MOVIE','DIRECTOR_MOVIE', 'ACTOR_MOVIE', 'CONTENT_MOVIE', 'STATUS_MOVIE'];
-
+    protected $primaryKey = 'ID_MOVIE';
     public function genre() {
         return $this->belongsTo(Genre::class, 'ID_GENRE','ID_GENRE');
     }

@@ -9,7 +9,9 @@ class Account extends Model
 {
     use HasFactory;
     protected $table = 'account';
+    public $timestamps = false;
     protected $fillable = ['USERNAME', 'PASSWORD', 'ROLE', 'TOKEN', 'VERIFY', 'STATUS'];
+    protected $primaryKey = 'USERNAME';
     
     public function member() {
         return $this->hasMany(Member::class);

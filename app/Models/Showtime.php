@@ -9,8 +9,9 @@ class Showtime extends Model
 {
     use HasFactory;
     protected $table = 'showtime';
+    public $timestamps = false;
     protected $fillable = ['ID_SHOWTIME', 'ID_ROOM', 'ID_MOVIE', 'DAY_SHOWTIME', 'TIME_START', 'TIME_END'];
-
+    protected $primaryKey = 'ID_SHOWTIME';
     public function room() {
         return $this->belongsTo(Room::class, 'ID_ROOOM', 'ID_ROOM');
     }

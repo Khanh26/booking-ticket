@@ -10,8 +10,9 @@ class Post extends Model
     use HasFactory;
 
     protected $table = 'post';
+    public $timestamps = false;
     protected $fillable = ['ID_POST', 'ID_TYPEPOST', 'ID_ADMIN','TITLE_POST', 'CONTENT_POST', 'DAY_POST', 'STATUS_POST', 'SUBTITLE_POST'];
-
+    protected $primaryKey = 'ID_POST';
     public function typepost() {
         return $this->belongsTo(Typepost::class ,'ID_TYPEPOST', 'ID_TYPEPOST');
     }

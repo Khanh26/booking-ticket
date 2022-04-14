@@ -57,6 +57,44 @@ ul {
     color: white;
 }
 
+.block-user {
+    width: max-content;
+    margin-right: 0;
+    margin-left: auto;
+    position: relative;
+    padding: 5% 0;
+}
+
+.block-user:hover .sub-nav{
+    display: block;
+}
+
+.sub-nav {
+    position: absolute;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 58px;
+    z-index: 9999999;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: none;
+    transition: all 0.3s;
+}
+
+.sub-nav a.link-nav {
+    padding: 6px 16px;
+    text-align: left;
+    display: block;
+    color: rgb(145, 145, 145);
+    background-color: white;
+    border: none;
+}
+
+.sub-nav a.link-nav:hover {
+    background-color: #CCCCCC;
+}
+
 .login {
     color: rgb(145, 145, 145);
 }

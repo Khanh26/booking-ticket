@@ -9,8 +9,10 @@ class Genre extends Model
 {
     use HasFactory;
     protected $table = 'genre';
+    public $timestamps = false;
     protected $fillable = ['ID_GENRE', 'NAME_GENRE'];
-
+    protected $primaryKey = 'ID_GENRE';
+    
     public function movie() {
         return $this->hasMany(Movie::class);
     }

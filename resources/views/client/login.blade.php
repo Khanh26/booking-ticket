@@ -21,15 +21,22 @@
                 <h3 class="heading-join">ĐĂNG NHẬP</h3>
             </div>
             <div class="body-join">
-                <form action="">
+                <form action="{{ route('postLogin') }}" method="POST">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                    @endif
+                    @csrf
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Tên đăng nhập hoặc Email:</label>
-                        <input type="text" class="form-control input-login" id="inputEmail">
+                        <input type="text" class="form-control input-login" name="username" value="{{old('username')}}" id="inputEmail">
                     </div>
 
                     <div class="mb-4">
                         <label for="inputPassword" class="form-label">Mật khẩu:</label>
-                        <input type="password" class="form-control input-login" id="inputPassword" placeholder="Mật khẩu ít nhất 8 ký tự">
+                        <input type="password" class="form-control input-login" name="password" id="inputPassword" placeholder="Mật khẩu ít nhất 8 ký tự">
                     </div>
 
                     <div class="mb-4 block-remember">

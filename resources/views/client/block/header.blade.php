@@ -1,3 +1,4 @@
+
 <nav class="header-info">
     <div class="block-header row">
         <div class="col-4 block-logo p-0 text-start">
@@ -20,11 +21,25 @@
             </form>
         </div>
         <div class="col-4 login p-0 text-end">
-            <i class="fas fa-user"></i>
-            <a href="{{ route('login') }}" class="btnLogin ml-3">Đăng nhập</a>
-            <span>/</span>
-            <a href="{{ route('register') }}" class="btnLogin">Đăng ký</a>
-        </div>
+            @if(!empty($user))
+                <div class="block-user">
+                    <i class="fas fa-user"></i>
+                    <a href="" class="btnLogin ml-3">{{$user->NAME_MEMBER}} <i class="fas fa-angle-down"></i></a>
+                    <ul class="sub-nav">
+                        <li><a href="" class="link-nav">Thông tin cá nhân</a></li>
+                        <li><a href="" class="link-nav">Vé của tôi</a></li>
+                        <li><a href="" class="link-nav">Đổi mật khẩu</a></li>
+                        <li><a href="{{ route('logout') }}" class="link-nav">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            @else
+                <div class="block-user">
+                    <i class="fas fa-user"></i>
+                    <a href="{{ route('login') }}" class="btnLogin ml-3">Đăng nhập</a>
+                    <span>/</span>
+                    <a href="{{ route('register') }}" class="btnLogin">Đăng ký</a>
+                </div>
+            @endif
     </div>
 </nav>
 <nav class="header-main">

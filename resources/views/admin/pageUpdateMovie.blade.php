@@ -11,7 +11,13 @@
 
 {{-- content --}}
 @section('content')
+    <div class="header-content">
+        
+    </div>
 
+    <div class="body-content">
+
+    </div>
 @endsection
 
 {{-- js --}}
