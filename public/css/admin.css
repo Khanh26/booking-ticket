@@ -1,4 +1,38 @@
-.fillter-movie {
+.block-chooses {
     justify-content: space-between;
+}
 
+.filter-movie {
+    position: relative;
+}
+
+.filter-movie .filter.open {
+    visibility: visible;
+}
+
+.filter-movie .filter {
+    visibility: hidden;
+    position: absolute;
+    z-index: 9999999;
+    width: max-content;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    left: 90px;
+    top: 0;
+}
+
+.filter .filter-form {
+    padding: 8px 12px;
+}
+
+.btnResultFilter {
+    width: 20%;
+    margin: 1rem 2rem 0 2rem;
+}
+
+.filter .checkbox-filter {
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
 }

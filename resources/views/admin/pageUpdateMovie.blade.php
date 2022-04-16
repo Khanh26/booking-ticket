@@ -38,16 +38,80 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row fillter-movie">
-                                <div class="col-sm-12 col-md-3">
-                                    <div class="form-group mb-0">
-                                        <select id="selectPermission" class="form-control d-inline-block" name="category">
-                                            <option value="all" selected>Tất cả</option>
-                                            <option value="1">Bình thường</option>
-                                            <option value="0">Tạm khóa</option>
-                                        </select>
+                            <div class="row block-chooses">
+                                <div class="col-sm-6 col-md-4 block-search">
+                                    <button class="btn btn-success mr-3"><i class="fas fa-plus"></i> Thêm mới</button>
+                                    <button class="btn btn-danger mr-3" disabled><i class="fas fa-trash-alt"></i>
+                                        Xoá</button>
+                                    <div class="filter-movie d-inline-block">
+                                        <button class="btn btn-light btnFilter"><i class="fas fa-filter"></i> Bộ lọc</button>
+                                        <div class="filter">
+                                            <form action="" class="filter-form">
+                                                <div class="form-group">
+                                                    <label for="">Thể loại:</label>
+                                                    <div class="row m-0">
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="genre">
+                                                            <span>Hành động</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="">Đối tượng:</label>
+                                                    <div class="row m-0">
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="status">
+                                                            <span>Dưới 13 Tuổi</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="status">
+                                                            <span>Trên 18 Tuổi</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Trạng thái:</label>
+                                                    <div class="row m-0">
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="status">
+                                                            <span>Đang hiện</span>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <input type="checkbox" class="checkbox-filter" name="status">
+                                                            <span>Đã ẩn</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="reset" class="btn btn-danger btnResultFilter">Khôi phục</button>
+                                                    <button class="btn btn-primary btnResultFilter">Lọc</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6 col-md-3 block-search">
                                     <div class="input-group">
                                         <input type="search" class="form-control" id="inputSearch" placeholder="Tìm kiếm">
@@ -61,246 +125,69 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-body"></div>
-                    </div>
 
                     <div class="card">
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th><input type="checkbox" name="" id=""></th>
+                                        <th>Poster</th>
+                                        <th>Tên phim</th>
+                                        <th>Ngày công chiếu</th>
+                                        <th>Trạng thái</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="data-movie">
                                     <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>Poster</td>
+                                        <td>Tên phim</td>
+                                        <td>Ngày công chiếu</td>
+                                        <td>Trạng thái</td>
+                                        <td>
+                                            <button class="btn btn-primary mr-2"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-success"><i class="fas fa-edit"></i></button>
                                         </td>
-                                        <td>Win 95+</td>
-                                        <td> 4</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td>5</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td>5.5</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 6
-                                        </td>
-                                        <td>Win 98+</td>
-                                        <td>6</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td>7</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td>6</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td>1.7</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td>1.9</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td>OSX.3+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Netscape 7.2</td>
-                                        <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                        <td>1.7</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Netscape Browser 8</td>
-                                        <td>Win 98SE+</td>
-                                        <td>1.7</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Netscape Navigator 9</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.0</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.1</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.1</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.2</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.2</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.3</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.3</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.4</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.4</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.5</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.5</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.6</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td>1.6</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.7</td>
-                                        <td>Win 98+ / OSX.1+</td>
-                                        <td>1.7</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.8</td>
-                                        <td>Win 98+ / OSX.1+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Seamonkey 1.1</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Epiphany 2.20</td>
-                                        <td>Gnome</td>
-                                        <td>1.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Webkit</td>
-                                        <td>Safari 1.2</td>
-                                        <td>OSX.3</td>
-                                        <td>125.5</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Webkit</td>
-                                        <td>Safari 1.3</td>
-                                        <td>OSX.3</td>
-                                        <td>312.8</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Webkit</td>
-                                        <td>Safari 2.0</td>
-                                        <td>OSX.4+</td>
-                                        <td>419.3</td>
-                                        <td>A</td>
                                     </tr>
 
-                                </tbody>
-                                <tfoot>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>Poster</td>
+                                        <td>Tên phim</td>
+                                        <td>Ngày công chiếu</td>
+                                        <td>Trạng thái</td>
+                                        <td>
+                                            <button class="btn btn-primary mr-2"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                        </td>
                                     </tr>
-                                </tfoot>
+
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>Poster</td>
+                                        <td>Tên phim</td>
+                                        <td>Ngày công chiếu</td>
+                                        <td>Trạng thái</td>
+                                        <td>
+                                            <button class="btn btn-primary mr-2"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>Poster</td>
+                                        <td>Tên phim</td>
+                                        <td>Ngày công chiếu</td>
+                                        <td>Trạng thái</td>
+                                        <td>
+                                            <button class="btn btn-primary mr-2"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -311,6 +198,8 @@
 
         </div>
     </div>
+
+    
 @endsection
 
 {{-- js --}}
@@ -324,5 +213,6 @@
     <script src="/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <script src="/js/configAdmin.js"></script>
+    <script src="/js/admin/configAdmin.js"></script>
+    <script src="/js/admin/effect.js"></script>
 @endsection

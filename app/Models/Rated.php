@@ -13,6 +13,6 @@ class Rated extends Model
     protected $fillable = ['ID_RATED', 'NOTE_RATED'];
     protected $primaryKey = 'ID_RATED';
     public function movie() {
-        return $this->hasMany(Movie::class);
+        return $this->hasMany(Movie::class, 'ID_RATED', 'ID_RATED');
     }
 }

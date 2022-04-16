@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Movie;
 
 class MovieController extends Controller
 {
@@ -14,4 +15,8 @@ class MovieController extends Controller
         return view('client.detailsMovie');
     }
 
+    public function getAllMovie() {
+        $movie = Movie::with('genre', 'rated')->get();
+        return response()->json($movie);
+    }
 }

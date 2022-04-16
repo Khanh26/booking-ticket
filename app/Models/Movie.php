@@ -10,14 +10,14 @@ class Movie extends Model
     use HasFactory;
     protected $table = 'movie';
     public $timestamps = false;
-    protected $fillable = ['ID_MOVIE', 'ID_RATED', 'ID_GENRE', 'NAME_MOVIE', 'POSTER_MOVIE', 'TRAILER_MOVIE','DIRECTOR_MOVIE', 'ACTOR_MOVIE', 'CONTENT_MOVIE', 'STATUS_MOVIE'];
+    protected $fillable = ['ID_MOVIE', 'ID_RATED', 'NAME_MOVIE', 'POSTER_MOVIE', 'TRAILER_MOVIE','DIRECTOR_MOVIE', 'ACTOR_MOVIE', 'CONTENT_MOVIE', 'STATUS_MOVIE'];
     protected $primaryKey = 'ID_MOVIE';
     public function genre() {
-        return $this->belongsTo(Genre::class, 'ID_GENRE','ID_GENRE');
+        return $this->belongsToMany(Genre::class);
     }
 
     public function rated() {
-        return $this->belongsTo(Rated::class,'ID_RATED', 'ID_RATED');
+        return $this->belongsTo(Rated::class, 'ID_RATED', 'ID_RATED');
     }
 
     public function showtime() {

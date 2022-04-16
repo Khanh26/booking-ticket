@@ -14,6 +14,6 @@ class Genre extends Model
     protected $primaryKey = 'ID_GENRE';
     
     public function movie() {
-        return $this->hasMany(Movie::class);
+        return $this->belongsToMany(Movie::class);
     }
 }

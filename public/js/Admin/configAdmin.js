@@ -8,7 +8,18 @@ function dataTablesLoad() {
         "autoWidth": false,
         "responsive": true,
         "order": [],
-    
+        "columns": [
+            { "width": "3%" },
+            null,
+            null,
+            { "width": "15%" },
+            { "width": "15%" },
+            { "width": "15%" },
+        ],
+        "columnDefs": [{
+            "targets": 0,
+            "orderable": false
+        }],
         // Vietsub notifications
         "language": {
             "emptyTable": "Hiện không có dòng nào",
