@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 16, 2022 at 01:46 PM
+-- Generation Time: Apr 16, 2022 at 03:28 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -85,6 +85,35 @@ CREATE TABLE `genre` (
   `NAME_GENRE` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `genre`
+--
+
+INSERT INTO `genre` (`ID_GENRE`, `NAME_GENRE`) VALUES
+(1, 'hàng động'),
+(2, 'viễn tưởng'),
+(3, 'tình cảm'),
+(4, 'kinh dị');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genre_movie`
+--
+
+CREATE TABLE `genre_movie` (
+  `MOVIE_ID_MOVIE` int(11) NOT NULL,
+  `GENRE_ID_GENRE` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `genre_movie`
+--
+
+INSERT INTO `genre_movie` (`MOVIE_ID_MOVIE`, `GENRE_ID_GENRE`) VALUES
+(6, 1),
+(6, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -117,9 +146,10 @@ INSERT INTO `member` (`ID_MEMBER`, `USERNAME`, `NAME_MEMBER`, `BIRTHDAY_MEMBER`,
 
 CREATE TABLE `movie` (
   `ID_MOVIE` int(11) NOT NULL,
-  `ID_RATED` varchar(5) NOT NULL,
+  `ID_RATED` int(11) NOT NULL,
   `NAME_MOVIE` varchar(100) DEFAULT NULL,
   `POSTER_MOVIE` varchar(100) NOT NULL,
+  `OPDAY_MOVIE` date DEFAULT NULL,
   `TRAILER_MOVIE` varchar(100) NOT NULL,
   `DIRECTOR_MOVIE` varchar(30) DEFAULT NULL,
   `ACTOR_MOVIE` varchar(200) DEFAULT NULL,
@@ -127,16 +157,13 @@ CREATE TABLE `movie` (
   `STATUS_MOVIE` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `movie_genre`
+-- Dumping data for table `movie`
 --
 
-CREATE TABLE `movie_genre` (
-  `ID_MOVIE` int(11) NOT NULL,
-  `ID_GENRE` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `movie` (`ID_MOVIE`, `ID_RATED`, `NAME_MOVIE`, `POSTER_MOVIE`, `OPDAY_MOVIE`, `TRAILER_MOVIE`, `DIRECTOR_MOVIE`, `ACTOR_MOVIE`, `CONTENT_MOVIE`, `STATUS_MOVIE`) VALUES
+(6, 1, 'Phim dở', 'Phim dở', NULL, 'Phim dở', 'Phim dở', 'Phim dở', 'Phim dở', 1),
+(7, 2, 'Phim hay', 'Phim hay', NULL, 'Phim hay', NULL, 'Phim hay', 'Phim hay', 1);
 
 -- --------------------------------------------------------
 
@@ -176,9 +203,17 @@ CREATE TABLE `rate` (
 --
 
 CREATE TABLE `rated` (
-  `ID_RATED` varchar(5) NOT NULL,
+  `ID_RATED` int(11) NOT NULL,
   `NOTE_RATED` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rated`
+--
+
+INSERT INTO `rated` (`ID_RATED`, `NOTE_RATED`) VALUES
+(1, 'C12'),
+(2, 'C13');
 
 -- --------------------------------------------------------
 
@@ -272,6 +307,13 @@ ALTER TABLE `genre`
   ADD PRIMARY KEY (`ID_GENRE`);
 
 --
+-- Indexes for table `genre_movie`
+--
+ALTER TABLE `genre_movie`
+  ADD PRIMARY KEY (`MOVIE_ID_MOVIE`,`GENRE_ID_GENRE`),
+  ADD KEY `FK_GERNE` (`GENRE_ID_GENRE`);
+
+--
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
@@ -283,14 +325,7 @@ ALTER TABLE `member`
 --
 ALTER TABLE `movie`
   ADD PRIMARY KEY (`ID_MOVIE`),
-  ADD KEY `FK_MOVIE_MOVIE_OBJ_OBJECT` (`ID_RATED`);
-
---
--- Indexes for table `movie_genre`
---
-ALTER TABLE `movie_genre`
-  ADD PRIMARY KEY (`ID_MOVIE`,`ID_GENRE`),
-  ADD KEY `FK_GERNE` (`ID_GENRE`);
+  ADD KEY `FK_MOVIE_RATED` (`ID_RATED`);
 
 --
 -- Indexes for table `post`
@@ -361,7 +396,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `ID_GENRE` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_GENRE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -373,7 +408,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `ID_MOVIE` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_MOVIE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `post`
@@ -386,6 +421,12 @@ ALTER TABLE `post`
 --
 ALTER TABLE `rate`
   MODIFY `ID_RATE` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rated`
+--
+ALTER TABLE `rated`
+  MODIFY `ID_RATED` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `room`
@@ -423,6 +464,13 @@ ALTER TABLE `comment`
   ADD CONSTRAINT `FK_POST_COMMENT` FOREIGN KEY (`ID_POST`) REFERENCES `post` (`ID_POST`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `genre_movie`
+--
+ALTER TABLE `genre_movie`
+  ADD CONSTRAINT `FK_GERNE` FOREIGN KEY (`GENRE_ID_GENRE`) REFERENCES `genre` (`ID_GENRE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_MOVIE` FOREIGN KEY (`MOVIE_ID_MOVIE`) REFERENCES `movie` (`ID_MOVIE`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `member`
 --
 ALTER TABLE `member`
@@ -432,14 +480,7 @@ ALTER TABLE `member`
 -- Constraints for table `movie`
 --
 ALTER TABLE `movie`
-  ADD CONSTRAINT `FK_MOVIE_MOVIE_OBJ_OBJECT` FOREIGN KEY (`ID_RATED`) REFERENCES `rated` (`ID_RATED`);
-
---
--- Constraints for table `movie_genre`
---
-ALTER TABLE `movie_genre`
-  ADD CONSTRAINT `FK_GERNE` FOREIGN KEY (`ID_GENRE`) REFERENCES `genre` (`ID_GENRE`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_MOVIE` FOREIGN KEY (`ID_MOVIE`) REFERENCES `movie` (`ID_MOVIE`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_MOVIE_RATED` FOREIGN KEY (`ID_RATED`) REFERENCES `rated` (`ID_RATED`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `post`
