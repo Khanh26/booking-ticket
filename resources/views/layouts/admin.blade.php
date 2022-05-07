@@ -50,8 +50,8 @@
 <!-- overlayScrollbars -->
 <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-@yield('js-plugin')
 <script src="/js/adminlte.min.js"></script>
+@yield('js-plugin')
 <!-- AdminLTE for demo purposes -->
 {{-- <script src="dist/js/demo.js"></script> --}}
 

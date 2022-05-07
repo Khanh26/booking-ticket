@@ -13,7 +13,7 @@ class Room extends Model
     protected $fillable = ['ID_ROOM', 'NAME_ROOM'];
     protected $primaryKey = 'ID_ROOM';
     public function showtime() {
-        return $this->hasMany(Showtime::class);
+        return $this->hasMany(Showtime::class,'ID_ROOM', 'ID_ROOM');
     }
 
 }

@@ -23,7 +23,7 @@
 
           <li class="nav-item">
             <a href="{{ route('pageShowMovie') }}" class="nav-link {{Route::currentRouteName() === 'pageShowMovie' ? 'active' : ''}}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Lịch chiếu phim
               </p>
@@ -32,7 +32,7 @@
 
           <li class="nav-item">
             <a href="{{ route('pageUpdateMovie') }}" class="nav-link {{Route::currentRouteName() === 'pageUpdateMovie' ? 'active' : ''}}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-film"></i>
               <p>
                 Cập nhật phim
               </p>
@@ -41,7 +41,7 @@
 
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Quản lý bài viết
               </p>
@@ -50,7 +50,7 @@
           
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Quản lý tài khoản
               </p>

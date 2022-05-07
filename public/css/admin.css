@@ -14,16 +14,31 @@
     visibility: hidden;
     position: absolute;
     z-index: 9999999;
-    width: max-content;
+    width: 1000px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
-    left: 90px;
-    top: 0;
+    left: -300px;
+    top: 47px;
 }
 
 .filter .filter-form {
     padding: 8px 12px;
+}
+
+.block-filter-genre {
+    position: relative;
+}
+
+.block-filter-genre::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    transform: translateY(-50%);
+    right: 0;
+    top: 50%;
+    background-color: #cccccc;
 }
 
 .btnResultFilter {
@@ -35,4 +50,57 @@
     width: 1em;
     height: 1em;
     margin-right: 4px;
+}
+
+.heading-details-film {
+    font-weight: 600;
+}
+
+
+.modal-body.mMovie {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.formFilePoster {
+    opacity: 0; 
+    z-index: -1; 
+    position: absolute;}
+  
+label.form-label.label-poster {
+    padding: 1;
+    border: 1px solid blue;
+    width: 100%;
+    padding: 7px;
+    color: blue;cursor: pointer;
+}
+
+.labelModal {
+    font-weight: 600;
+}
+
+.prPoster {
+    width: 100%;
+    object-fit: cover;
+}
+
+.lb-checkbox {
+    font-weight: normal!important;
+}
+
+.message {
+    color: red;
+}
+
+.poster-table {
+    width: 54px;
+    display: block;
+    object-fit: cover;
+}
+#btnAddShow {
+    margin-top: calc(24px + 0.5rem);
+    width: 100%;
+}
+.block-day {
+    border: 1px solid #cccccc!important;
 }

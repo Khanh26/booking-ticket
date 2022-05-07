@@ -26,12 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
-            $user = array();
-            if (Session::has('loginUsername')) {
-                $user = Member::where('USERNAME', '=', Session::get('loginUsername'))->first();
-            }
-            $view->with('user', $user);
-        });
+        
     }
 }

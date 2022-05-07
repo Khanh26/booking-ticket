@@ -56,24 +56,6 @@
                     <div class="col-5 poster"><img src="{{ asset("/img/poster/chiakhoatramty.jpg")}}" class="img-poster-sidebar"></div>
                     <div class="col-7"><h6 class="heading-name-item-sidebar">Chìa khóa trăm tỷ</h6></div>
                 </a>
-
-                <a href="" class="row item-movieShowing">
-                    <div class="col-5 poster"><img src="{{ asset("/img/poster/dautruongamnhac.jpg")}}" class="img-poster-sidebar"></div>
-                    <div class="col-7"><h6 class="heading-name-item-sidebar">Đấu trường âm nhạc</h6></div>
-                </a>
-
-                <a href="" class="row item-movieShowing">
-                    <div class="col-5 poster"><img src="{{ asset("/img/poster/paw.jpg")}}" class="img-poster-sidebar"></div>
-                    <div class="col-7"><h6 class="heading-name-item-sidebar">Paw</h6></div>
-                </a>
-                <a href="" class="row item-movieShowing">
-                    <div class="col-5 poster"><img src="{{ asset("/img/poster/phim1990.jpg")}}" class="img-poster-sidebar"></div>
-                    <div class="col-7"><h6 class="heading-name-item-sidebar">Phim 1990</h6></div>
-                </a>
-                <a href="" class="row item-movieShowing">
-                    <div class="col-5 poster"><img src="{{ asset("/img/poster/vungdatthanky.jpg")}}" class="img-poster-sidebar"></div>
-                    <div class="col-7"><h6 class="heading-name-item-sidebar">Vùng đất thần kỳ</h6></div>
-                </a>
             </div>
             <div class="more-sidebar">
                 <a href="{{ route('movie') }}" class="more-link">Xem thêm</a>

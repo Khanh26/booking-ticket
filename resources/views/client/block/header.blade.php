@@ -10,24 +10,16 @@
                     <input type="text" class="col-9 inputSearch" placeholder="Tìm kiếm phim, bài viết..." list="topics" name="Search" id="inputSearch">
                     <button type="submit" class="col-3 btnSearch" class=""><i class="fas fa-search"></i></button>
                 </div>
-                <datalist id="topics">
-                    <option value="khanh">
-                    <option value="binh">
-                    <option value="Tien">
-                    <option value="dung">
-                    <option value="bao">
-                    <option value="thuy">
-                </datalist>
             </form>
         </div>
         <div class="col-4 login p-0 text-end">
-            @if(!empty($user))
+            @if(Session::has('login_name') && Session::has('login_id'))
                 <div class="block-user">
                     <i class="fas fa-user"></i>
-                    <a href="" class="btnLogin ml-3">{{$user->NAME_MEMBER}} <i class="fas fa-angle-down"></i></a>
+                    <a href="" class="btnLogin ml-3">{{Session::get('login_name')}} <i class="fas fa-angle-down"></i></a>
                     <ul class="sub-nav">
                         <li><a href="" class="link-nav">Thông tin cá nhân</a></li>
-                        <li><a href="" class="link-nav">Vé của tôi</a></li>
+                        <li><a href="{{ route('ticket')}}" class="link-nav">Vé của tôi</a></li>
                         <li><a href="" class="link-nav">Đổi mật khẩu</a></li>
                         <li><a href="{{ route('logout') }}" class="link-nav">Đăng xuất</a></li>
                     </ul>
