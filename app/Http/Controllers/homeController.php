@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Models\Movie;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -10,12 +11,15 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $movieShowing = Movie::with('suitable')->whereHas('showtime')->get();
+        $movieShowing = Movie::with('suitable')->whereHas('showtime', function ($query) {
+            $query->where('DAY_SHOWTIME', '>=', Carbon::now()->toDateString());
+        })
+        ->get();
         $movieComingSoon = Movie::with('suitable')->doesntHave('showtime')->where('STATUS_MOVIE', '=', 1)->get();
         return view('client.home')->with('data', [
             'movieShowing' => $movieShowing,
             'movieComingSoon' => $movieComingSoon,
-        ]);   
+        ]); 
     }
     
     public function about() {

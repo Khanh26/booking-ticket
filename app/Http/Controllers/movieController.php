@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Carbon;
 class MovieController extends Controller
 {
     public function show()
     {
-        $movieShowing = Movie::with('suitable')->whereHas('showtime')->get();
+        $movieShowing = Movie::with('suitable')->whereHas('showtime', function ($query) {
+            $query->where('DAY_SHOWTIME', '>=', Carbon::now()->toDateString());
+        })
+        ->get();
         $movieComingSoon = Movie::with('suitable')->doesntHave('showtime')->where('STATUS_MOVIE', '=', 1)->get();
         return view('client.movie')->with('data', [
             'movieShowing' => $movieShowing,

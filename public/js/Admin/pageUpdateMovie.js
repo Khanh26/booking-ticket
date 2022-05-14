@@ -596,7 +596,6 @@ function readURL(input, element) {
                 .attr('src', e.target.result);
         };
         reader.readAsDataURL(input.files[0]);
-
     }
 }
 
