@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Session;
-use App\Models\Member;
+// use App\Models\Genre;
 use Illuminate\Support\ServiceProvider;
-// use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+
     }
 }

@@ -35,22 +35,23 @@
             <div class="list-movie row">
                 @foreach ($data['movieShowing'] as $item)
                     <div class="col-4 item-movie position-relative">
-                        <img src="img/poster/{{$item->POSTER_MOVIE}}" class="poster-movie" alt="">
+                        <img src="img/poster/{{ $item->POSTER_MOVIE }}" class="poster-movie" alt="">
                         <div class="name-movie">
-                            <p>{{$item->NAME_MOVIE}}</p>
+                            <p>{{ $item->NAME_MOVIE }}</p>
                         </div>
                         <div class="btnAction">
-                            <a href="{{ route('detailsMovie', ['idMovie'=>$item->ID_MOVIE]) }}" class="btnView btnAction-item">Xem chi tiết</a>
-                            <a href="{{ route('checkout', ['idMovie'=>$item->ID_MOVIE]) }}" class="btnBooking btnAction-item">Đặt vé</a>
+                            <a href="{{ route('detailsMovie', ['idMovie' => $item->ID_MOVIE]) }}"
+                                class="btnView btnAction-item">Xem chi tiết</a>
+                            <a href="{{ route('checkout', ['idMovie' => $item->ID_MOVIE]) }}"
+                                class="btnBooking btnAction-item">Đặt vé</a>
                         </div>
                         <div class="object">
-                            <p class="p-object">{{$item->SUITABLE->NOTE_SUITABLE}}</p>
+                            <p class="p-object">{{ $item->SUITABLE->NOTE_SUITABLE }}</p>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-
         <div class="container movie-main">
             <div class="header-movie">
                 <button class="heading-content active showing">PHIM SẮP CHIẾU</button>
@@ -58,15 +59,16 @@
             <div class="list-movie row">
                 @foreach ($data['movieComingSoon'] as $item)
                     <div class="col-4 item-movie position-relative">
-                        <img src="img/poster/{{$item->POSTER_MOVIE}}" class="poster-movie" alt="">
+                        <img src="img/poster/{{ $item->POSTER_MOVIE }}" class="poster-movie" alt="">
                         <div class="name-movie">
-                            <p>{{$item->NAME_MOVIE}}</p>
+                            <p>{{ $item->NAME_MOVIE }}</p>
                         </div>
                         <div class="btnAction">
-                            <a href="{{ route('detailsMovie', ['idMovie'=>$item->ID_MOVIE]) }}" class="btnView btnAction-item">Xem chi tiết</a>
+                            <a href="{{ route('detailsMovie', ['idMovie' => $item->ID_MOVIE]) }}"
+                                class="btnView btnAction-item">Xem chi tiết</a>
                         </div>
                         <div class="object">
-                            <p class="p-object">{{$item->SUITABLE->NOTE_SUITABLE}}</p>
+                            <p class="p-object">{{ $item->SUITABLE->NOTE_SUITABLE }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -111,7 +113,8 @@
                         <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.7</strong>/10(110)
                         </div>
                         <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 16/04/2022</i></div>
-                        <p class="content-new">Danh sách các phim dưới đây hẳn sẽ chiều long người xem với mong muốn thưởng thức những màn “xả đạn” đặc sắc.</p>
+                        <p class="content-new">Danh sách các phim dưới đây hẳn sẽ chiều long người xem với mong muốn
+                            thưởng thức những màn “xả đạn” đặc sắc.</p>
                     </div>
                 </div>
             </div>
@@ -123,12 +126,15 @@
                     </div>
                     <div class="title-news col-7">
                         <a href="">
-                            <h5 class="title-new">Top 10 diễn viên được đồn đoán sẽ thay thế Daniel Craig vào vai James Bond</h5>
+                            <h5 class="title-new">Top 10 diễn viên được đồn đoán sẽ thay thế Daniel Craig vào vai James
+                                Bond</h5>
                         </a>
                         <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.9</strong>/10(110)
                         </div>
                         <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 12/03/2022</i></div>
-                        <p class="content-new">Cùng với việc háo hức chờ đợi xem Daniel Craig xuất hiện lần cuối cùng với vai trò James Bond trong No Time To Die, người hâm mộ cũng đang phấn khích chờ đợi xem liệu gương mặt nào sẽ kế tục công việc của anh ấy?</p>
+                        <p class="content-new">Cùng với việc háo hức chờ đợi xem Daniel Craig xuất hiện lần cuối cùng với
+                            vai trò James Bond trong No Time To Die, người hâm mộ cũng đang phấn khích chờ đợi xem liệu
+                            gương mặt nào sẽ kế tục công việc của anh ấy?</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +151,8 @@
                         <div class="rate mb-1"><i class="fas fa-star text-warning"></i> <strong>8.8</strong>/10(110)
                         </div>
                         <div class="date-post mb-1"><i><i class="fas fa-calendar-alt"></i> 01/03/2020</i></div>
-                        <p class="content-new">Giải thưởng điện ảnh – thuần phong mỹ tục – giá trị nghệ thuật được nhìn nhận thế nào?
+                        <p class="content-new">Giải thưởng điện ảnh – thuần phong mỹ tục – giá trị nghệ thuật được nhìn
+                            nhận thế nào?
                         </p>
                     </div>
                 </div>

@@ -40,9 +40,7 @@
                     <div class="mb-3">
                         <label for="inputUsername" class="form-label">Tên đăng nhập:</label>
                         <input type="text" class="form-control input-login" name="username" id="inputUsername" value="{{old('username')}}" placeholder="Nhập tên đăng nhập">
-                        <span class="text-danger">@error('username') {{$message}}
-                            
-                            @enderror</span>
+                        <span class="text-danger">@error('username') {{$message}} @enderror</span>
                     </div>
 
                     <div class="mb-3">
