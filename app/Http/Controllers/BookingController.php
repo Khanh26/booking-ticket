@@ -17,7 +17,9 @@ class BookingController extends Controller
         ->where('ID_MOVIE', '=', $idMovie)->first();
 
         if($movie) {
-            $showtime = Showtime::where('ID_MOVIE', '=', $idMovie)->orderBy('DAY_SHOWTIME', 'ASC')
+            $showtime = Showtime::where('ID_MOVIE', '=', $idMovie)
+            ->where('DAY_SHOWTIME', '>=', Carbon::now()->toDateString() )
+            ->orderBy('DAY_SHOWTIME', 'ASC')
             ->groupBy('DAY_SHOWTIME')->get('DAY_SHOWTIME');
             return view('client.checkout')->with('data', [
                 'movie' => $movie,
