@@ -82,12 +82,12 @@ class ShowTimeController extends Controller
     {
         $timeMovie = Movie::where('ID_MOVIE', '=', $request->movie)->get('TIME_MOVIE')->first();
         $newTime = Carbon::create(null, null, null, explode(':', $request->time_start)[0], explode(':', $request->time_start)[1])->addMinutes($timeMovie['TIME_MOVIE'] + 15)->toTimeString();
-
+    
         $showTimeStart = Showtime::where('ID_ROOM', '=', $request->room)
             ->where('ID_MOVIE', '=', $request->movie)
             ->where('DAY_SHOWTIME', '=', $request->day_show)
-            ->where('TIME_START', '<=', $request->time_start)
-            ->where('TIME_END', '>=', $request->time_start)->count();
+            ->whereBetween('TIME_START', [$request->time_start, $newTime])
+            ->whereBetween('TIME_END', [$request->time_start, $newTime])->count();
 
 
         if ($showTimeStart > 0) {
@@ -96,22 +96,10 @@ class ShowTimeController extends Controller
                 'time_end' => $newTime,
             ]);
         } else {
-            $showTimeEnd = Showtime::where('ID_ROOM', '=', $request->room)
-                ->where('ID_MOVIE', '=', $request->movie)
-                ->where('DAY_SHOWTIME', '=', $request->day_show)
-                ->where('TIME_START', '<=', $newTime)
-                ->where('TIME_END', '>=', $newTime)->count();
-            if ($showTimeEnd > 0) {
-                return response()->json([
-                    'message' => 'error',
-                    'time_end' => $newTime,
-                ]);
-            } else {
-                return response()->json([
-                    'message' => 'success',
-                    'time_end' => $newTime,
-                ]);
-            }
+            return response()->json([
+                'message' => 'success',
+                'time_end' => $newTime,
+            ]);
         }
     }
 

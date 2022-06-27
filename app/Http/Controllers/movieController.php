@@ -16,9 +16,6 @@ class MovieController extends Controller
         ->get();
 
         $movieComingSoon = Movie::with('suitable')->doesntHave('showtime')->where('STATUS_MOVIE', '=', 1)->get();
-        echo '<pre>';
-        print_r($movieComingSoon);
-        echo '</pre>';
         return view('client.movie')->with('data', [
             'movieShowing' => $movieShowing,
             'movieComingSoon' => $movieComingSoon,
