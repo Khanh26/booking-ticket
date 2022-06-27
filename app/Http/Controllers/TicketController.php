@@ -61,7 +61,7 @@ class TicketController extends Controller
                 ->join('movie', 'movie.ID_MOVIE', '=', 'showtime.ID_MOVIE')
                 ->where('ticket.ID_MEMBER', '=', $request->ID_MEMBER)
                 ->where('showtime.DAY_SHOWTIME', '>=', Carbon::now()->toDateString())
-                ->where('showtime.TIME_END', '>', Carbon::now()->toTimeString())
+                // ->where('showtime.TIME_START', '>', Carbon::now()->toTimeString())
                 ->orderBy('DAY_TICKET', 'ASC')->get();
                 return response()->json($ticket);
         }
@@ -72,7 +72,7 @@ class TicketController extends Controller
                 ->join('movie', 'movie.ID_MOVIE', '=', 'showtime.ID_MOVIE')
                 ->where('ticket.ID_MEMBER', '=', $request->ID_MEMBER)
                 ->where('showtime.DAY_SHOWTIME', '<', Carbon::now()->toDateString())
-                ->where('showtime.TIME_END', '<=', Carbon::now()->toTimeString())
+                // ->where('showtime.TIME_END', '<=', Carbon::now()->toTimeString())
                 ->orderBy('DAY_TICKET', 'ASC')->get();
                 return response()->json($ticket);
         }
