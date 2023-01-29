@@ -8,8 +8,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\TicketController;
-use Illuminate\Auth\Events\Logout;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
