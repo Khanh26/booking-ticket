@@ -241,6 +241,9 @@ async function removeShowtime(value) {
 }
 
 async function getAllShowTime(number) {
+    document.querySelector('#btnNextDay').disabled = true;
+    document.querySelector('#btnPrevDay').disabled = true;
+    document.querySelector('#btnReload').disabled = true;
     desTroyDataTables('#tableShowTime');
     loading('#data-showTime');
     const showTime = await fetch(`${baseSite}api/getAllShowTime/${number}`)
@@ -251,6 +254,9 @@ async function getAllShowTime(number) {
         .catch(error => {
             console.log(error);
         });
+    document.querySelector('#btnNextDay').disabled = false;
+    document.querySelector('#btnPrevDay').disabled = false;
+    document.querySelector('#btnReload').disabled = false;
     htmlShowtime = renderTables(showTime);
     document.querySelector('#data-showTime').innerHTML = htmlShowtime;
     reload();
@@ -288,7 +294,7 @@ function addEventBtn() {
             editModal.querySelector('#btnSubmitEdit').addEventListener('click', () => {
                 editShowtime(editModal, btnEdits[i].value);
             })
-            
+
         })
     }
     for (let i = 0; i < btnRemove.length; i++) {
@@ -296,7 +302,7 @@ function addEventBtn() {
             removeShowtime(btnRemove[i].value);
         })
     }
-    
+
 }
 
 document.querySelector('#btnReload').addEventListener('click', () => {

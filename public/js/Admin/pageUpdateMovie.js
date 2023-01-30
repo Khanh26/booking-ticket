@@ -1,4 +1,5 @@
 function renderTables(Movies) {
+    console.log(Movies);
     let html = Movies.map((movie) => {
         return `
         <tr>
@@ -148,14 +149,14 @@ async function createMovie() {
     ]
     // validate forms
     let validate = true;
-        for (let key in data) {
-            // console.log(data[key].value);
-            if (data[key].value.length == 0) {
-                validate = false;
-                let message = data[key].input.parentElement.querySelector('.message');
-                message.textContent = 'Không được để trống';
-            }
+    for (let key in data) {
+        // console.log(data[key].value);
+        if (data[key].value.length == 0) {
+            validate = false;
+            let message = data[key].input.parentElement.querySelector('.message');
+            message.textContent = 'Không được để trống';
         }
+    }
     if (validate == true) {
         formData = new FormData();
         formData.append('ID_SUITABLE', getValueData('suitable', data).value);
@@ -572,6 +573,7 @@ async function removeMovie() {
 
 
 async function getAllMovie() {
+    document.querySelector('#btnReload').disabled = true;
     desTroyDataTables('#example1');
     loading('#data-movie');
     const movies = await fetch(`${baseSite}api/getAllMovie`)
@@ -582,6 +584,7 @@ async function getAllMovie() {
         .catch(error => {
             console.log(error);
         });
+    document.querySelector('#btnReload').disabled = false;
     htmlMovies = renderTables(movies);
     document.querySelector('#data-movie').innerHTML = htmlMovies;
     reload();
@@ -600,17 +603,18 @@ function readURL(input, element) {
 }
 
 function reload() {
-    dataTablesLoad('#example1',[
-            { "width": "3%" },
-            null,
-            null,
-            { "width": "17%" },
-            { "width": "15%" },
-            { "width": "15%" },
-        ]);
+    dataTablesLoad('#example1', [
+        {"width": "3%"},
+        null,
+        null,
+        {"width": "17%"},
+        {"width": "15%"},
+        {"width": "15%"},
+    ]);
     checkBox();
     addEventBtn();
 }
+
 // Add event.
 
 // form event
@@ -632,18 +636,25 @@ document.querySelector('.btnFilter').addEventListener('click', function (e) {
     if (e.target.nextElementSibling.classList == 'filter open') {
         e.target.style.backgroundColor = '#e9ecef';
         e.target.innerHTML = '<i class="fas fa-filter"></i> Đóng';
-    }
-    else {
+    } else {
         e.target.style.backgroundColor = '#f8f9fa';
         e.target.innerHTML = '<i class="fas fa-filter"></i> Bộ lọc'
     }
 
 })
 
-document.querySelector('#btnAddMovie').addEventListener('click', () => { createMovie(); });
-document.querySelector('#btnReload').addEventListener('click', () => { getAllMovie() });
-document.querySelector('#btnRemove').addEventListener('click', () => { removeMovie() });
-document.querySelector('#btnSearch').addEventListener('click', () => { searchMovie() });
+document.querySelector('#btnAddMovie').addEventListener('click', () => {
+    createMovie();
+});
+document.querySelector('#btnReload').addEventListener('click', () => {
+    getAllMovie();
+});
+document.querySelector('#btnRemove').addEventListener('click', () => {
+    removeMovie()
+});
+document.querySelector('#btnSearch').addEventListener('click', () => {
+    searchMovie()
+});
 document.querySelector('#inputSearch').addEventListener('keyup', (e) => {
     if (e.key == 'Enter') {
         searchMovie();

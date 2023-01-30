@@ -73,7 +73,7 @@ function dataTablesLoadShowTime(table, col) {
             "orderable": false
         }],
         "rowGroup": {
-            dataSrc: 0,  
+            dataSrc: 0,
         },
         // Vietsub notifications
         "language": {
